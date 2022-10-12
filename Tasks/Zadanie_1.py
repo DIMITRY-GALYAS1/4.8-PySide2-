@@ -2,16 +2,25 @@
 # -*- coding: utf-8 -*-
 
 """
-Напишите программу, состоящую из двух списков Listbox. В первом будет,
-например, перечень товаров, заданный программно. Второй изначально пуст, пусть это
-будет перечень покупок. При клике на одну кнопку товар должен переходить из одного
-списка в другой. При клике на вторую кнопку – возвращаться (человек передумал покупать).
-Предусмотрите возможность множественного выбора элементов списка и их перемещения
+Напишите программу, состоящую из двух списков Listbox. В первом
+будет, например, перечень товаров, заданный программно. Второй
+изначально пуст, пусть это будет перечень покупок. При клике на
+одну кнопку товар должен переходить из одного списка в другой.
+При клике на вторую кнопку – возвращаться (человек передумал покупать).
+Предусмотрите возможность множественного выбора элементов списка и
+их перемещения
 """
 
 import sys
-from PySide2.QtWidgets import QWidget, QApplication, QListWidget, QPushButton, QAbstractItemView, QVBoxLayout, \
-    QHBoxLayout
+from PySide2.QtWidgets import (
+    QWidget,
+    QApplication,
+    QListWidget,
+    QPushButton,
+    QAbstractItemView,
+    QVBoxLayout,
+    QHBoxLayout,
+)
 
 
 class MainWindow(QWidget):
@@ -57,7 +66,16 @@ class MainWindow(QWidget):
 
 
 if __name__ == "__main__":
-    shopping_list = ['apple', 'bananas', 'carrot', 'bread', 'butter', 'meat', 'potato', 'pineapple']
+    shopping_list = [
+        "apple",
+        "bananas",
+        "carrot",
+        "bread",
+        "butter",
+        "meat",
+        "potato",
+        "pineapple",
+    ]
     application = QApplication(sys.argv)
     window = MainWindow()
     window.show()

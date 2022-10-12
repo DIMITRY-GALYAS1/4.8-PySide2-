@@ -2,16 +2,26 @@
 # -*- coding: utf-8 -*-
 
 """
-Напишите программу по описанию. Размеры многострочного текстового поля определяются значениями,
-введенными в однострочные текстовые поля. Изменение размера происходит при нажатии мышью на кнопку,
-а также при нажатии клавиши Enter. Цвет фона экземпляра Text светлосерый (lightgrey),
-когда поле не в фокусе, и белый, когда имеет фокус. Для справки: фокус перемещается по виджетам при нажатии Tab,
-Ctrl+Tab, Shift+Tab, а также при клике по ним мышью (к кнопкам последнее не относится).
+Напишите программу по описанию. Размеры многострочного текстового поля
+определяются значениями, введенными в однострочные текстовые поля.
+Изменение размера происходит при нажатии мышью на кнопку, а также при
+нажатии клавиши Enter. Цвет фона экземпляра Text светлосерый (lightgrey),
+когда поле не в фокусе, и белый, когда имеет фокус. Для справки: фокус
+перемещается по виджетам при нажатии Tab, Ctrl+Tab, Shift+Tab, а также
+при клике по ним мышью (к кнопкам последнее не относится)
 """
 
 
 import sys
-from PySide2.QtWidgets import QApplication, QWidget, QLineEdit, QHBoxLayout, QVBoxLayout, QPushButton, QTextEdit
+from PySide2.QtWidgets import (
+    QApplication,
+    QWidget,
+    QLineEdit,
+    QHBoxLayout,
+    QVBoxLayout,
+    QPushButton,
+    QTextEdit,
+)
 
 
 class MainWindow(QWidget):
@@ -43,12 +53,13 @@ class MainWindow(QWidget):
 
     def on_focus(self, old, new):
         if self.text_box == new:
-            self.text_box.setStyleSheet(f"background-color: #fff;")
+            self.text_box.setStyleSheet("background-color: #fff;")
         elif self.text_box == old:
-            self.text_box.setStyleSheet(f"background-color: #d3d3d3;")
+            self.text_box.setStyleSheet("background-color: #d3d3d3;")
 
     def edit_size(self):
-        self.text_box.resize(int(self.line_edit1.text()), int(self.line_edit2.text()))
+        self.text_box.resize(int(self.line_edit1.text()),
+                             int(self.line_edit2.text()))
 
 
 if __name__ == "__main__":

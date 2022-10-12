@@ -2,12 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-Напишите программу по следующему описанию. Нажатие Enter в однострочном текстовом поле приводит к перемещению текста из
-него в список. При двойном клике по элементу-строке списка, она должна копироваться в текстовое поле.
+Напишите программу по следующему описанию. Нажатие Enter в однострочном
+текстовом поле приводит к перемещению текста из него в список. При
+двойном клике по элементу-строке списка, она должна копироваться в
+текстовое поле
 """
 
 import sys
-from PySide2.QtWidgets import QApplication, QWidget, QLineEdit,  QVBoxLayout, QListWidget
+from PySide2.QtWidgets import QApplication, QWidget, QLineEdit, \
+    QVBoxLayout, QListWidget
 
 
 class MainWindow(QWidget):

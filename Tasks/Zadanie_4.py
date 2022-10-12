@@ -20,7 +20,7 @@ class MainWindow(QWidget):
 
     def paintEvent(self, event):
         painter = QPainter(self)
-        painter.setPen(QPen(Qt.darkRed, 3, Qt.SolidLine))  # Цвет и линия обводки
+        painter.setPen(QPen(Qt.darkRed, 3, Qt.SolidLine))  # Обводка
         painter.setBrush(QColor(255, 0, 0, 127))
         painter.drawRect(215, 200, 253, 281)  # корпус домика
         painter.setPen(QPen(Qt.darkRed, 3, Qt.SolidLine))
@@ -29,11 +29,9 @@ class MainWindow(QWidget):
         painter.drawLine(305, 335, 373, 335)  # Рама окна по горизонтали
         painter.drawLine(340, 300, 340, 367)  # Рама окна по вертикали
         painter.setBrush((QBrush(Qt.black)))
-        points = QPolygon([
-            QPoint(215, 200),
-            QPoint(338, 70),
-            QPoint(469, 200)  # Крыша
-        ])
+        points = QPolygon(
+            [QPoint(215, 200), QPoint(338, 70), QPoint(469, 200)]  # Крыша
+        )
         painter.drawPolygon(points)
         painter.begin(self)
         painter.setRenderHint(QPainter.Antialiasing)
@@ -49,51 +47,58 @@ class MainWindow(QWidget):
         painter.setPen(QPen(Qt.darkGreen, 2, Qt.SolidLine))
         painter.setBrush(Qt.darkGreen)
         for i in range(63):
-            painter.drawArc(random.randint(1, 5), 417, i * 15, 360, 0 * 100, random.randint(50, 55) * 11)
+            painter.drawArc(
+                random.randint(1, 5),
+                417,
+                i * 15,
+                360,
+                0 * 100,
+                random.randint(50, 55) * 11,
+            )
 
     def draw_mouse(self, painter):
         painter.begin(self)
-        points2 = QPolygon([
-            QPoint(104, 458),
-            QPoint(82, 450),
-            QPoint(88, 473),
-            QPoint(79, 473),
-            QPoint(79, 487),
-            QPoint(92, 486)
-        ])
-        points3 = QPolygon([
-            QPoint(144, 457),
-            QPoint(168, 452),
-            QPoint(161, 473),
-            QPoint(170, 473),
-            QPoint(170, 487),
-            QPoint(158, 487)
-        ])
-        points5 = QPolygon([
-            QPoint(141, 449),
-            QPoint(149, 446),
-            QPoint(159, 438),
-            QPoint(169, 429),
-            QPoint(175, 423),
-            QPoint(171, 432),
-            QPoint(162, 442),
-            QPoint(151, 451),
-            QPoint(143, 456)
-        ])
-        points4 = QPolygon([
-            QPoint(124, 411),
-            QPoint(92, 486),
-            QPoint(158, 487)
-        ])
+        points2 = QPolygon(
+            [
+                QPoint(104, 458),
+                QPoint(82, 450),
+                QPoint(88, 473),
+                QPoint(79, 473),
+                QPoint(79, 487),
+                QPoint(92, 486),
+            ]
+        )
+        points3 = QPolygon(
+            [
+                QPoint(144, 457),
+                QPoint(168, 452),
+                QPoint(161, 473),
+                QPoint(170, 473),
+                QPoint(170, 487),
+                QPoint(158, 487),
+            ]
+        )
+        points5 = QPolygon(
+            [
+                QPoint(141, 449),
+                QPoint(149, 446),
+                QPoint(159, 438),
+                QPoint(169, 429),
+                QPoint(175, 423),
+                QPoint(171, 432),
+                QPoint(162, 442),
+                QPoint(151, 451),
+                QPoint(143, 456),
+            ]
+        )
+        points4 = QPolygon([QPoint(124, 411), QPoint(92, 486),
+                            QPoint(158, 487)])
         painter.setPen(QPen(Qt.gray))
         painter.setBrush(QBrush(Qt.darkGray))
         painter.drawEllipse(78, 351, 40, 40)
         painter.drawEllipse(132, 359, 40, 40)
-        points1 = QPolygon([
-            QPoint(71, 423),
-            QPoint(126, 364),
-            QPoint(158, 423)
-        ])
+        points1 = QPolygon([QPoint(71, 423), QPoint(126, 364),
+                            QPoint(158, 423)])
         painter.drawPolygon(points3)
         painter.drawPolygon(points2)
         painter.drawPolygon(points5)
